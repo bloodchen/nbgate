@@ -18,6 +18,7 @@ One of its use case is to build decentrolized blockchain website. **NBgate** is 
 ## How to use?
 
 1. clone the code
+2. run  `npm install` in the code folder
 2. run `node nb-server.js`
 3. open url http://127.0.0.1:3000/md.1010.test/ in browser and you shall be able to see some Markdown content.
 
