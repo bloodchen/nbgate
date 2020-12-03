@@ -87,6 +87,6 @@ app.post("/upload", async (req, res) => {
 
 // listen for requests :)
 const port = process.env.PORT ? process.env.PORT : 3000;
-const listener = app.listen(process.env.PORT, () => {
+const listener = app.listen(port, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
