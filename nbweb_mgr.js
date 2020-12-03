@@ -8,12 +8,13 @@ const punCode = require('punycode');
 const bitfs = require("./bitfs.js");
 const ipfs = require("./ipfs.js");
 const u = require('./util.js');
+require('dotenv').config();
 
 (async ()=>{
 await NBLib.init({
-	API:"https://manage.nbdomain.com/node/",
-	token:"02a43685fc7613626164d36555f7bfee2adafa4f4d35d2816860c61aca15505c58",
-	filepayKey:"44h9cKf4VHUvdpbRnG8KER1qCwx3oEjqho7TFBZv23BFgMtewE7k4kXPJbfv1EPQsi",
+	API:"https://api.nbdomain.com/v1/",
+	token:process.env.NBToken, 
+	filepayKey:process.env.FilepayKey,
 	debug:true,
 	enable_write:false
   });
@@ -28,16 +29,16 @@ class nbweb_mgr {
   async handleURL(res, addr) {
     addr = "https://" + addr;
     let q = url.parse(addr, true);
-    console.log(q);
+    //console.log(q);
     //let res_content = await reader.read_domain(q.hostname);
     //console.log(res_content);
-    let hostname = punCode.toUnicode(q.hostname);
+    let hostname = punCode.toUnicode(q.hostname); //support unicode name
     console.log(hostname);
     const dots = hostname.split('.').length-1;
     if(dots==1) hostname="*."+hostname;
     //hostname = encodeURI(hostname);
     let res_content = await NBLib.readDomain(hostname);
-    console.log(res_content);
+    //console.log(res_content);
     if (res_content != null) {
       if (res_content.code == 0) {
         

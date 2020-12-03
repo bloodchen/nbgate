@@ -1,30 +1,35 @@
-# hello-express
+# NBgate - HTTP gateway for NBdomain Website
 
-A server that serves a webpage, its resources, and some data
-
-
-## Your Project
-
-On the front-end,
-
-- Edit `views/index.html` to change the content of the webpage
-- `public/client.js` is the javacript that runs when you load the webpage
-- `public/style.css` is the styles for `views/index.html`
-- Drag in `assets`, like images or music, to add them to your project
-
-On the back-end,
-
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
-
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy.
+[NBdomain](https://nbdomain.com) is the decentrolized blockchain domain system. It's one of the effect to reInvent Internet (Web 3.0).
+One of its use case is to build decentrolized blockchain website. **NBgate** is the open source project that display decentrolized blockchain websites defined by NBdomain.
 
 
-## Made by [Glitch](https://glitch.com/)
+## Main features
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+1. Support raw text of sub-domain content.
 
-Find out more [about Glitch](https://glitch.com/about).
+2. Display transaction id of the sub-domain, so users can always verify the content independatly.
 
-( ᵔ ᴥ ᵔ )
+3. Support displaying Markdown format of sub-domain content. It uses [markdownd-it](https://github.com/markdown-it/markdown-it) with
+[GitHub CSS](https://gist.github.com/tuzz/3331384).
+
+4. All contents are immutiable and retrieved from BSV blockchain.
+
+## How to use?
+
+1. clone the code
+2. run `node nb-server.js`
+3. open url http://127.0.0.1:3000/md.1010.test/ in browser and you shall be able to see some Markdown content.
+
+You can optionally provide public service to other users.
+
+## List of public NBgate servers
+`please append nbdomain url to the end of NBgate server`
+
+* https://nbgate.glitch.me/
+* https://api.nbdomain.com/nb/
+
+If you setup a public server, please submit an issue and we will update the list.
+
+
+
