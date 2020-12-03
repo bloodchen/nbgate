@@ -32,7 +32,7 @@ class nbweb_mgr {
     //console.log(q);
     //let res_content = await reader.read_domain(q.hostname);
     //console.log(res_content);
-    let hostname = punCode.toUnicode(q.hostname);
+    let hostname = punCode.toUnicode(q.hostname); //support unicode name
     console.log(hostname);
     const dots = hostname.split('.').length-1;
     if(dots==1) hostname="*."+hostname;
