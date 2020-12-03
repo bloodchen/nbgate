@@ -47,43 +47,7 @@ app.get("/*", async (req, res) => {
   }
 });
 
-//handle file uploads
-app.post("/upload", async (req, res) => {
-  let path = req.body.path;
 
-  console.log("in upload: " + path);
-  try {
-    if (!req.files) {
-      res.send({
-        status: false,
-        message: "No file uploaded"
-      });
-    } else {
-      console.log(req.files);
-      let data = [];
-      let item = req.files.item;
-      console.log("in upload:" + item.name);
-      //move photo to uploads directory
-      item.mv(__dirname + "/uploads/" + path);
-
-      //push file details
-      data.push({
-        name: item.name,
-        mimetype: item.mimetype,
-        size: item.size
-      });
-
-      //return response
-      res.send({
-        status: true,
-        message: "Files are uploaded",
-        data: data
-      });
-    }
-  } catch (err) {
-    res.status(500).send(err);
-  }
-});
 
 // listen for requests :)
 const port = process.env.PORT ? process.env.PORT : 3000;
