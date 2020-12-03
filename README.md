@@ -19,10 +19,11 @@ One of its use case is to build decentrolized blockchain website. **NBgate** is 
 
 1. clone the code
 2. run  `npm install` in the code folder
+3. create a `.env` file and set `NBToken=` to some BSV address you own. You can also optionally set `PORT=` to the local port you want to use to run the service.
 2. run `node nb-server.js`
 3. open url http://127.0.0.1:3000/md.1010.test/ in browser and you shall be able to see some Markdown content.
 
-You can optionally provide public service to other users.
+You can optionally provide the public service to other users.
 
 ## List of public NBgate servers
 `please append nbdomain url to the end of NBgate server`

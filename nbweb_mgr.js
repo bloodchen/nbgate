@@ -14,7 +14,6 @@ require('dotenv').config();
 await NBLib.init({
 	API:"https://api.nbdomain.com/v1/",
 	token:process.env.NBToken, 
-	filepayKey:process.env.FilepayKey,
 	debug:true,
 	enable_write:false
   });
